@@ -16,7 +16,7 @@ export class InfoPaginaService {
   equipo: any[] = [];
 
   constructor( private http: HttpClient ) {
-    console.log('Servicio info pagina cargado');
+    /* console.log('Servicio info pagina cargado'); */
     this.cargarInfo();
     this.cargarEquipo();
   }
@@ -27,14 +27,14 @@ export class InfoPaginaService {
       .subscribe( (resp: InfoPagina) => {
         this.cargada = true;
         this.info = resp;
-        console.log(resp);
+        /* console.log(resp); */
       } );
   }
 
   private cargarEquipo() {
     this.http.get(`${this.url}`).subscribe( (resp: any[]) => {
       this.equipo = resp;
-      console.log(resp);
+      /* console.log(resp); */
     });
   }
 }
